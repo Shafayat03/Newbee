@@ -76,6 +76,52 @@ return 0;
 
 
 
+/**************** more optimal approach ******/
+
+
+/// Optimal code   --- > Iterative approach
+
+///Binary  Exponentiation code   :  a ^ b
+
+
+
+
+#include<bits/stdc++.h>
+
+#define MOD = 1e9 + 7;
+using namespace std;
+unsigned int power(int x, int y, nt p = MOD)
+{
+    unsigned long long res = 1;
+
+    x = x % p;
+
+    while(y > 0)
+    {
+        if(y & 1)  res = (res * x) % p;
+
+        y = y >> 1;
+        x = (x * x ) % p;
+    }
+    return res;
+}
+int  main(){
+
+
+    int a,x;
+    cin >> a >> x;
+
+    int res = power(a,x);
+    cout << res << endl;
+
+
+
+return 0;
+}
+
+
+
+
 
 
 
