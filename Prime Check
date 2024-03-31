@@ -1,0 +1,136 @@
+
+
+/// PRime  Check
+/// Complexity : O(N)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    bool ok = true;
+    for(int i = 2; i <= n; i++){
+
+        if(n% i == 0){
+            ok = false;
+        }
+
+    }
+
+    if(ok) cout <<"Prime\n";
+    else cout <<"Composite\n";
+
+
+
+
+}
+
+
+
+/************ More Optimal *****************/
+
+
+
+
+
+/// PRime  Check   more optimal
+/// Complexity : O  Sqrt(N)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    bool ok = true;
+    for(int i = 2; i * i <= n; i++){
+
+        if(n% i == 0){
+            ok = false;
+        }
+
+    }
+
+    if(ok) cout <<"Prime\n";
+    else cout <<"Composite\n";
+
+
+
+
+}
+
+
+/************************* Absoulute optimal *****************/
+
+Complexity : O(nlog logn)
+
+Class - 02 (Seive of Erathosthenis)
+//  v.judge Contest link ( problem task solve) :  https://github.com/MuhammadShahriar/Module-3-Codes/blob/main/Class-2/Vjudge%20Contest%20Task-1.cpp
+
+// Important blogs : 
+                    1.  http://www.shafaetsplanet.com/?p=624
+                    2.  https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html
+
+/// Disucused : https://www.spoj.com/problems/TDPRIMES/ 
+
+solution : 
+
+
+///   ***   ---   ||         In the name of ALLAH        |||   ---   ***   ///
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define endl '\n'
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+const int mx = 1e8;
+bitset<mx> isPrime;
+vector<int> primes;
+
+void primeGen ( int n )
+{
+    for ( int i = 3; i <= n; i += 2 ) isPrime[i] = 1;
+
+    int sq = sqrt(n);
+    for ( int i = 3; i <= sq; i += 2 ) {
+        if(isPrime[i]) {
+            for ( int j = i*i; j <= n; j += i ) {
+                isPrime[j] = 0;
+            }
+        }
+    }
+
+    primes.push_back(2);
+
+    for ( int i = 3; i <= n; i += 2 ) {
+        if(isPrime[i] == 1) {
+            primes.push_back(i);
+        }
+    }
+}
+
+int main()
+{
+    optimize();
+
+    int lim = 1e8;
+
+    primeGen(lim);
+
+
+    return 0;
+}
+
+
+
