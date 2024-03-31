@@ -133,4 +133,39 @@ int main()
 }
 
 
+/*********** Another code for seive *******/
+
+/// PRime  Check   more optimal
+/// Complexity : O(N log logN)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int sz = 15;
+
+   vector<bool>seive(sz, 1);
+
+   seive[0] = seive[1] = 0;
+
+   for(int i = 2; i < sz; i++)
+   {
+       if(seive[i] == 0) continue; /// composite number
+       for(int j = i * i ; j < sz; j+= i)
+       {
+           seive[j] = 0;
+       }
+   }
+
+   for(int i = 1; i <sz; i++)
+   {
+       cout <<"i: " << i << " " << seive[i] << endl; /// 1 denote prime  and o denotes composite
+   }
+
+
+
+}
+
 
