@@ -1,0 +1,41 @@
+/***
+
+    Basics :  12 = 2 ^2  x 3
+    
+  to find gcd there is a build in function in c++ stl
+
+     Cout << __gcd(a,b) << endl;
+
+
+                      a * b
+also           LCM =  ------
+                        gcd(a,b)
+
+
+**/
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int main(){
+
+      int a,b;
+cin >> a >> b;
+
+cout << __gcd(a,b) << endl; ///    to find gcd using buildin function
+
+
+int LCM =  a * b / __gcd(a,b) ;
+
+
+cout <<   LCM << endl ; /// to find LCM 
+
+return 0;
+
+
+}
