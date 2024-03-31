@@ -1,0 +1,83 @@
+
+/// Exponentiation code   :  a ^ b
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int  main(){
+
+
+    int a,x;
+    cin >> a >> x;
+
+    int res = 1;
+
+    for(int i = 1; i <= x; i++)
+    {
+        res *= a;  /// res = res * a;
+    }
+
+   cout <<res << endl;
+
+return 0;
+}
+
+
+
+
+
+
+/****************** Optimal code ***********/
+
+
+
+/// Optimal code
+
+/// Exponentiation code   :  a ^ b
+
+
+
+ int power(int a, int x)
+ {
+     if(x==0)  return 1;
+
+     if(x % 2)   /// we also write this using :   !(x & 1)
+     {
+         int res = power(a,(x-1)/2);
+         return res * res * a;
+     }
+     else{
+        int res = power(a,x/2);
+        return res * res;
+     }
+ }
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int  main(){
+
+
+    int a,x;
+    cin >> a >> x;
+
+    int res = power(a,x);
+    cout << res << endl;
+
+
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
