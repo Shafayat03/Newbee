@@ -1,0 +1,349 @@
+#include<bits/stdc++.h>
+#define int long long
+
+#define endl '\n'
+
+typedef long long ll;
+
+using namespace std;
+
+/// comparator function to sort ascending order
+bool comp(int x, int y)
+{
+    return x < y;
+}
+
+
+/// comparator function to sort pair
+
+bool cmp(pair<int, int > p1, pair<int, int > p2)
+{
+    if(p1.first == p2.first)
+    {
+        p1.second < p2.second;
+
+    }
+
+    return p1.first < p2.first;
+}
+
+int32_t main()
+{
+    /// array input
+    // int ar[3] = {1,2,3};
+/*
+   int n;
+
+     cin >> n;
+     vector<int>vc; /// vector declaration
+//int n = vc.size();
+  */
+
+    /// user input array
+/*
+    for(int i = 0; i  < n; i++)
+    {
+        int x;
+        cin >> x;
+
+        vc.push_back(x);
+    }
+
+
+
+    for(int i = 0; i < n; i++)
+    {
+        cout << vc[i] << " ";
+    }
+    cout << endl;
+
+*/
+  //  cout << (int)vc.size() << endl; /// typecast size of vector  unsigned value aste pare  etar jonno -- > Run time error dite pare
+
+
+
+    /// vector input using range based for loop
+/*
+    for(auto &i : vc)cin >> i;
+    for(auto i : vc)cout << i << " ";
+
+  */
+
+
+
+/// auto --> use kore kono data type chara use kora jai
+
+//  auto x = 3.5;
+
+//  cout <<  x << endl; /// 3.5
+
+/// vector input and output using ---> iterator
+/*
+ int n;
+ cin >> n;
+  vector<int>v(n);
+   for(int i = 0; i < n ; i++)
+   {
+       cin >> v[i];
+   }
+
+   vector<int>:: iterator it;
+
+   for(it = v.begin(); it != v.end(); it++)
+   {
+       cout << *it << " ";
+   }
+   cout << endl;
+
+*/
+   /// kono element khujte chaile-- > end pointer e chole gele element tah present nai but jodi end porjonto na jai taile present acce and oi index tah output dibe
+
+/*
+
+   auto q = find(v.begin(), v.end(),3);
+
+   if(q == v.end()){
+    cout << "Not present\n";
+   }
+   else{
+      int x = it- v.begin(); /// koto tomo index e  oi value ace oitah return kore
+      cout << x << endl;
+
+   }
+
+
+
+   */
+
+
+   ///  pair
+
+   /*
+
+   vector<pair<int, int>>vp;
+
+   int n;
+   cin >>n;
+
+   for(int i = 0; i < n; i++)
+   {
+       int x,y;
+       cin >> x >> y;
+
+       vp.push_back({x,y});
+   }
+
+   for(int i = 0; i < n; i++)
+   {
+       cout <<vp[i].first << " " << vp[i].second << endl;
+   }
+
+*/
+
+
+  /// String
+
+
+ // string s;
+  ///cin >> s;
+
+ // cout << s << endl; /// evabe space wala character input nei nah
+
+
+  /// getline use kore easily space soho newa jai
+/// age akta integer input nile setah endl soho input niye fele oitah skip korar jonno
+/// amra  ---->  cin.ignore use kori
+
+/*
+int x;
+cin >> x;
+  cin.ignore(); /// ager input er porer space ignore kore dei
+
+  string str;
+  getline(cin, str);
+  cout << str << endl;
+
+
+  cout << str.size() << endl;
+
+
+*/
+
+
+/// string concatination
+
+/*
+string s, s1 = "abc";
+
+cin >> s;
+
+s += s1;
+cout << s << endl;
+
+*/
+
+
+/// lexiographyically  kon string tah boro erokom check korte pari
+
+/*
+string s1 = "abc", s2 = "acc";
+
+if(s1 < s2)
+{
+
+    cout <<"less";
+}
+if(s1 == s2) cout <<"Equal\n";
+
+*/
+
+
+
+/// string er sub-string check
+
+/*
+string s;
+cin >> s;
+                 /// index number egula () er modde --- (index, koitah value nite caccci setah)
+string s1 = s.substr(2,3 );
+
+cout << s1 << endl;
+
+*/
+
+
+/// STL buildin function sort
+
+/*
+
+int n;
+cin >> n;
+vector<int>v(n);
+
+for(int i = 0;  i < n; i++)cin >> v[i];
+
+sort(v.begin(),v.end()); /// nLg(N)
+/// reverse order e sort
+//sort(v.begin(),v.end(), greater<int>());
+sort(v.rbegin(),v.rend()); /// eta o reverse order e sort kore dei
+
+
+/// sort using comparator function
+
+sort(v.begin(),v.end(), comp);
+
+for(int i = 0; i < n; i++)cout << v[i] << " ";
+cout <<endl;
+
+*/
+
+
+/// set
+
+/*
+
+//set<int>st;
+/// set reverse order e sort korte chiale--- set<int, greater<>>st;
+
+set<int, greater<>>st;
+for(int i = 0; i < 5; i++)
+{
+    int x; cin >> x;
+    st.insert(x);
+}
+
+for(auto it : st)
+{
+    cout << it << " ";
+}
+cout << endl;
+
+
+
+*/
+
+
+/// map
+
+
+
+/*
+map<int,int>mp;
+
+for(int i = 0;i < 3;i++)
+{
+    int x,y;
+    cin >> x >> y;
+    mp[x] = y;
+}
+
+for(auto it : mp)
+{
+    cout << it.first << " " << it.second << endl;
+}
+
+*/
+
+/// map er frequency ber korte chaile
+
+/*
+
+
+map<int,int>mp;
+
+for(int i = 0;i < 3;i++)
+{
+    int x,y;
+    cin >> x ;
+    mp[x]++;
+}
+
+for(auto it : mp)
+{
+    cout << it.first << " " << it.second << endl;
+}
+*/
+
+/// map e kono akta  value ace kina check
+
+
+
+
+
+
+
+
+map<int, int > mp;
+
+for(int i = 0; i < 6; i++)
+{
+    int x,y;
+    cin >> x;
+    mp[x]++;
+}
+auto it = mp.find(9);
+
+if(it != mp.end())
+{
+    cout << "Present";
+}
+else cout <<"Not Present\n";
+
+/// map er kono akta value
+
+/// map er kono value delete korar jonno
+
+mp.erase(9);
+
+
+for(auto x : mp)
+{
+    cout << x.first << " "  ;
+}
+
+
+
+
+
+
+}
