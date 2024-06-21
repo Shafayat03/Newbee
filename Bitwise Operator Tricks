@@ -40,11 +40,15 @@ return  x && !(x & (x-1));
 
 ##.  Multiply or  Divide a number by  2 ^ k
 
-multiply  :    ( x << k)     (left shift) -->>    ( remove the LSB)
+(x * 2 ^ k ) multiply  :    ( x << k)     (left shift) -->>    ( remove the LSB)
 
-Divide   :   ( x >> k )      (Right  Shift ) -->>  ( remove the LSB)
-
-
+(x/ 2 ^ k ) Divide   :   ( x >> k )      (Right  Shift ) -->>  ( remove the LSB)
 
 
 
+
+
+
+##.  Find out   x % 2 ^ k
+
+  check --->>   x & ((1 << k) - 1) 
