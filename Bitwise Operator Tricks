@@ -52,3 +52,27 @@ return  x && !(x & (x-1));
 ##.  Find out   x % 2 ^ k
 
   check --->>   x & ((1 << k) - 1) 
+
+
+
+##. swapping 2 numbers x and y without using a temporary variable
+
+x = x ^ y     { x = x ^ y,   y = y}
+
+y =  x ^ y    { x = x ^ y,  y = x ^ y ^ y = x}
+
+x =  x ^ y     { x = x ^ y ^ x = y ,   y = x }
+
+
+##. Property :   no. of set bits in A = X
+                 no. of set bits in B =  Y;
+                 no. of set bits in (A ^ B) = Z
+
+then    
+      Z is even if    X + Y   is even 
+      Z is  odd  if   X + Y  is  odd
+
+
+
+
+
