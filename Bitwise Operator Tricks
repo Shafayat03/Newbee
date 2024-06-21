@@ -38,7 +38,11 @@ return  x && !(x & (x-1));
 
 
 
+##.  Multiply or  Divide a number by  2 ^ k
 
+multiply  :    ( x << k)     (left shift) -->>    ( remove the LSB)
+
+Divide   :   ( x >> k )      (Right  Shift ) -->>  ( remove the LSB)
 
 
 
