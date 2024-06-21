@@ -1,0 +1,46 @@
+// check a number is even or odd -->> checking the LSB(Least Significent Bit) 
+complexity: O(1)
+
+n & 1 -- >> if true --> ODD
+n & 1 -->> if false -->  EVEN
+
+
+if(n & 1) cout <<"ODD\n";
+else cout <<"EVEN\n";
+
+/// checking a  number is power of 2 (2^n) or not 
+
+
+x & (x-1)  -->>  if True  -->> power of 2
+x & (x-1) -->> if False -->> not a power of 2 
+
+it does'nt work if  x == 0
+
+
+## we can check by this function is a power of 2 or not 
+
+bool powerof2(int x){
+return  x && !(x & (x-1));
+
+}
+
+
+##. Playing With the kth bit  (kth bit means --> kth least significant bit)
+
+(1 << k)  == 2 ^ k;
+
+
+
+1. check if kth bit is set --->>    x & (1 << k)
+2. Toggle  the kth bit   --->>      x ^ ( 1 << k)
+3. Set the kth bit     --->>       x | (1 << k)
+4. unset the kth bit -->>          x & ~(1 << k)
+
+
+
+
+
+
+
+
+
