@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Factorial using recursion
+int factorial(int n) {
+  if (n == 0) {
+    return 1; // Base case: factorial of 0 is 1
+  }
+  return n * factorial(n - 1); // Recursive call: n! = n * (n-1)!
+}
+
+// Fibonacci sequence using recursion
+int fibonacci(int n) {
+  if (n <= 1) {
+    return n; // Base case: Fibonacci of 0 is 0 and Fibonacci of 1 is 1
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2); // Recursive call: Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
+}
+
+int main() {
+  int n = 5;
+
+  // Factorial
+  int factorial_result = factorial(n);
+  cout << "Factorial of " << n << " is: " << factorial_result << endl;
+
+  // Fibonacci sequence
+  for (int i = 0; i <= n; ++i) {
+    cout << "Fibonacci of " << i << " is: " << fibonacci(i) << endl;
+  }
+
+  return 0;
+}
