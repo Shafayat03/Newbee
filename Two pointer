@@ -1,0 +1,42 @@
+ 
+///   Find the pair whose sum is equal to x    (two pointer methods)
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+
+int main(){
+     
+      int n;
+      cin >> n;
+      
+      vector<int>a(n);
+      
+      
+      for(auto &u : a)cin>> u;
+      
+      sort(a.begin(),a.end());
+      
+      int val;
+      cin >> val;
+      int i = 0, j = n - 1;
+      bool ok = false;
+      while(i < j){
+           
+           int sum = a[i]  + a[j];
+           
+           
+           if(sum == val) ok = true;
+           if(sum > val) j--;
+           else i++;
+      }
+    
+     cout << ((ok) ? "YES" : "NO") << '\n';
+    return 0;
+}
