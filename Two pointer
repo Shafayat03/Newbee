@@ -106,3 +106,72 @@ int main(){
      //cout << ((ok) ? "YES" : "NO") << '\n';
     return 0;
 }
+
+
+
+
+
+///   Find the pair in Array Whose sum is closest to X    (two pointer methods)
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+
+int main(){
+     
+      int n;
+      cin >> n;
+      int val1, val2;
+      vector<int>a(n);
+      
+      
+      for(auto &u : a)cin>> u;
+      
+      sort(a.begin(),a.end());
+      
+      int val;
+      cin >> val;
+      int i = 0, j = n - 1;
+      bool ok = false;
+      int diff = INT_MAX;
+      while(i < j){
+           
+           int sum = a[i]  + a[j];
+           
+           
+           if(abs(sum - val) < diff){
+               val1 = i;
+               val2 = j;
+              diff = abs(sum - val);
+           } 
+           if(sum > val) j--;
+           else i++;
+      }
+      
+      /// value 2tah print korte hole
+      
+     // int x =  a[val1];
+    //  int y = a[val2];
+      
+      //int fsum = x + y;
+          cout <<   "(" << a[val1] << ' ' << a[val2] << ")" << "  =>  " << a[val1] +  a[val2]  << '\n';
+      
+    
+     //cout << ((ok) ? "YES" : "NO") << '\n';
+    return 0;
+}
+
+
+
+
+
+
+
+
+
